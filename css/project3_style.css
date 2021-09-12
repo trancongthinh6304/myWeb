@@ -3,7 +3,7 @@
 :root{
   --body-font: 'Kaisei HarunoUmi', serif;
 
-  --hue-color: 340; /*the first one in the hsl color mode*/
+  --hue-color: 220; /*the first one in the hsl color mode*/
   --first-color: hsl(var(--hue-color), 69%, 61%); /*#6E57E0 - turn into hsl color mode*/
   --first-color-second: hsl(var(--hue-color), 69%, 61%);
   --first-color-alt: hsl(var(--hue-color), 57%, 53%);
