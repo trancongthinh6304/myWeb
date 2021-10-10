@@ -139,3 +139,36 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+var animateButton = function(e) {
+
+  e.preventDefault;
+  //reset animation
+  e.target.classList.remove('animate');
+  
+  e.target.classList.add('animate');
+  setTimeout(function(){
+    e.target.classList.remove('animate');
+  },700);
+};
+
+var bubblyButtons = document.getElementsByClassName("button");
+
+for (var i = 0; i < bubblyButtons.length; i++) {
+  bubblyButtons[i].addEventListener('click', animateButton, false);
+}
+
+$(document).ready(function(){
+  var mouseX, mouseY;
+  var ww = $( window ).width();
+  var wh = $( window ).height();
+  var traX, traY;
+  $(document).mousemove(function(e){
+    mouseX = e.pageX;
+    mouseY = e.pageY;
+    traX = ((4 * mouseX) / 20) + 100;
+    traY = ((4 * mouseY) / 20) + 100;
+    console.log(traX);
+    $(".home__title").css({"background-position": traX + "%" + traY + "%"});
+  });
+});

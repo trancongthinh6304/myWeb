@@ -46,9 +46,9 @@
         //scene.add(light4);
 
         let loader = new THREE.GLTFLoader();
-        loader.load('New_folder/Earth.gltf', function(gltf){
+        loader.load('3D/ftm/scene.gltf', function(gltf){
             car = gltf.scene.children[0];
-            car.scale.set(10,10,10);
+            car.scale.set(20,20,20);
             scene.add(gltf.scene);
             animate();
         });

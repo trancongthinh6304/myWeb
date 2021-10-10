@@ -102,6 +102,8 @@ ul{
 
 a{
   text-decoration: none;
+  color: var(--first-color-alt);
+  font-weight: var(--font-medium);
 }
 
 img{
@@ -114,6 +116,11 @@ img{
   border-radius: .5rem;
   justify-self: center;
   align-self: center;
+}
+
+.vietnam__img{
+  width: 25px;
+  border-radius: .5rem;
 }
 
 /*REUSABLE CSS CLASSES*/
@@ -287,7 +294,9 @@ img{
 }
 
 .home__blob-img{
-  width: 170px;
+  height: 200px;
+  transform: translate(10px);
+
 }
 
 .home__data{
@@ -295,7 +304,16 @@ img{
 }
 
 .home__title{
-  font-size: var(--big-font-size);
+  font-size: 63px;
+  font-weight: var(--font-bold);
+  color: transparent;
+	background: url("https://static.vecteezy.com/system/resources/thumbnails/001/313/978/small/mistic-blue-galaxy-watercolor-texture-free-vector.jpg") repeat;
+	background-position: 40% 50%;
+	-webkit-background-clip: text;
+	position: relative;
+	text-align: center;
+	line-height: 90px;
+	letter-spacing: 1px;
 }
 
 .home__subtitle{
@@ -342,6 +360,13 @@ img{
   border-radius: .5rem;
   font-weight: var(--font-medium);
   transition: .3s;
+  border: none;
+  font-family: var(--body-font);
+  box-shadow: 0 2px 25px var(--first-color-lighter);
+}
+
+.button:focus{
+  outline: 0;
 }
 
 .button:hover{
@@ -358,6 +383,74 @@ img{
   align-items: center;
 }
 
+.button:before, .button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 20%, #ff0081 20%, transparent 30%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, transparent 10%, #ff0081 15%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%), radial-gradient(circle, #ff0081 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.button:active {
+  transform: scale(0.9);
+  background-color: var(--first-color-alt);
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+ }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+ }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+ }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+ }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+ }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+ }
+}
+
 /*About*/
 .about__img{
   width: 200px;
@@ -369,6 +462,7 @@ img{
 .about__description{
   text-align: center;
   margin-bottom: var(--mb-2-5);
+  line-height: 34px;
 }
 
 .about__info{
@@ -705,6 +799,8 @@ img{
 
 .footer__subtitle{
   font-size: var(--small-font-size);
+  align-content: center;
+  align-items: center;
 }
 
 .footer__links{
@@ -900,7 +996,7 @@ img{
   }
 
   .home__content{
-    padding-top: 5.5rem;
+    padding-top: 2.5rem;
     column-gap: 2rem;
   }
 
@@ -1057,4 +1153,99 @@ img{
   50% { height: 100%;}
   75% { height: 100%;}
   100% { height: 0%;}
+}
+
+.description__img {
+  width: 30px;
+}
+
+.light__container .glowline {
+  position: absolute;
+  top: 50%;
+  left: 30px;
+  height: 0;
+  width: 100%;
+}
+
+.shadow {
+  width: 80%;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.shadow::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 0;
+  border-top: 2px solid var(--first-color-lighter);
+}
+
+.shadow::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  height: 0;
+  box-shadow: 0 -1px 9px 3px rgba(176, 190, 255, 0.35);
+}
+
+.shadow .shadow-line {
+  position: relative;
+  height: 30px;
+  flex: 1 1 auto;
+  min-width: 10%;
+  overflow: hidden;
+}
+
+.shadow .shadow-line::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -20px;
+  right: 0;
+  height: 10px;
+  border-radius: 100%;
+}
+
+.shadow .shadow-l::before {
+  right: -100%;
+  box-shadow: 10px 40px 40px 1px rgba(176, 190, 255, 0.7), 10px 5px 20px 1px rgba(176, 190, 255, 0.9);
+}
+
+.shadow .shadow-r::before {
+  left: -100%;
+  box-shadow: 0px 40px 40px 1px rgba(176, 190, 255, 0.7), 10px 5px 20px 1px rgba(176, 190, 255, 0.9);
+}
+
+.circles {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circles::before {
+  position: absolute;
+  top: 80px;
+  height: 1px;
+  width: 1px;
+  border-radius: 10%;
+  box-shadow: 0 0 60px 60px #000;
+}
+
+.medal{
+  width: 30px;
+  border-radius: .5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.skills__img{
+  width: 15px;
+  filter: invert(48%) sepia(75%) saturate(1860%) hue-rotate(159deg) brightness(91%) contrast(102%); 
 }
